@@ -152,7 +152,6 @@ class OSTrack(BaseTracker):
 
         for i in range(12):
             self.network.backbone.blocks[i].attn.register_forward_hook(
-                # lambda self, input, output: enc_attn_weights.append(output[1])
                 lambda self, input, output: enc_attn_weights.append(output[1])
             )
 

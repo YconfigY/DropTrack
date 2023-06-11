@@ -205,11 +205,13 @@ def _create_vision_transformer(pretrained=False, **kwargs):
         else:
             checkpoint = torch.load(pretrained, map_location="cpu")
             # do something here
-            checkpoint_model = checkpoint['model']
+            # checkpoint_model = checkpoint['model']
+            checkpoint_model = checkpoint['net']
             key_names = list(checkpoint_model.keys())
-            for key_name in key_names:
-                if 'decoder' in key_name:
-                    del checkpoint_model[key_name]
+            # if pretrained is not 'DropTrack_k700_800E_alldata.pth.tar':
+            #     for key_name in key_names:
+            #         if 'decoder' in key_name:
+            #             del checkpoint_model[key_name]
 
             missing_keys, unexpected_keys = model.load_state_dict(checkpoint_model, strict=False)
             print(missing_keys)

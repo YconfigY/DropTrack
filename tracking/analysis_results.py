@@ -10,7 +10,7 @@ trackers = []
 # dataset_name = 'otb'
 # dataset_name = 'lasot_extension_subset'
 # dataset_name = 'itb'
-dataset_name = 'tnl2k'
+dataset_name = 'lmd_tship_vottest'
 """stark"""
 # trackers.extend(trackerlist(name='stark_s', parameter_name='baseline', dataset_name=dataset_name,
 #                             run_ids=None, display_name='STARK-S50'))
@@ -50,8 +50,25 @@ dataset_name = 'tnl2k'
 #                             run_ids=None, display_name='OSTrack384_280'))
 # trackers.extend(trackerlist(name='ostrack', parameter_name='vitb_384_mae_ce_32x4_ep279', dataset_name=dataset_name,
 #                             run_ids=None, display_name='OSTrack384_279'))
-trackers.extend(trackerlist(name='ostrack', parameter_name='vitb_384_mae_ce_32x4_ep296', dataset_name=dataset_name,
-                            run_ids=None, display_name='OSTrack384_296'))
+# trackers.extend(trackerlist(name='ostrack', parameter_name='vitb_384_mae_ce_32x4_ep296', dataset_name=dataset_name,
+#                             run_ids=None, display_name='OSTrack384_296'))
+
+trackers.extend(trackerlist(name='ostrack', 
+                            parameter_name='vitb_256_mae_ce_32x4_ep100_LMD_OSTrack_Test_300', 
+                            dataset_name=dataset_name,
+                            run_ids=None, display_name='OSTrack_Test_300'))
+# trackers.extend(trackerlist(name='ostrack', 
+#                             parameter_name='vitb_256_mae_ce_32x4_ep100_LMD_OSTrack_Finetune_300',
+#                             dataset_name=dataset_name,
+#                             run_ids=None, display_name='OSTrack_Finetune_300'))
+# trackers.extend(trackerlist(name='ostrack', 
+#                             parameter_name='vitb_256_mae_ce_32x4_ep100_LMD_DropTrack_Pretrained_800',
+#                             dataset_name=dataset_name,
+#                             run_ids=None, display_name='DropTrack_Pretrained_800'))
+
+# trackers.extend(trackerlist(name='ostrack_finetune_300', 
+#                             parameter_name='vitb_256_mae_ce_32x4_ep300_LMD', dataset_name=dataset_name,
+#                             run_ids=None, display_name='OSTrack_Finetune_300'))
 
 dataset = get_dataset(dataset_name)
 print(dataset)

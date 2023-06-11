@@ -20,13 +20,8 @@ def parameters(yaml_name: str):
     params.search_factor = cfg.TEST.SEARCH_FACTOR
     params.search_size = cfg.TEST.SEARCH_SIZE
 
-    # # for got10k
-    # params.checkpoint = os.path.join(save_dir, "OSTrack_got10k_100E.pth.tar") 
-
-    # for trackingnet/lasot/tnl2k...
-    params.checkpoint = os.path.join(save_dir, "OSTrack_alldata_300E.pth.tar")
-
-    print(params.checkpoint)
+    params.checkpoint = os.path.join(save_dir, "checkpoints/train/ostrack/%s/DropTrack_ep%04d.pth.tar" %
+                                    (yaml_name, cfg.TEST.EPOCH))
 
     # whether to save boxes from all queries
     params.save_all_boxes = False

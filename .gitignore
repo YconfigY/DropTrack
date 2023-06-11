@@ -1,0 +1,4 @@
+
+pretrained_models/DropTrack_k700_800E_alldata.pth.tar
+pretrained_models/k700_800E_checkpoint_final.pth
+lib/test/evaluation/local.py
